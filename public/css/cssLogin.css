@@ -71,15 +71,6 @@ button:hover{
 	background: #6d44b8;
 }
 
-.loader {
-    width: 48px;
-    height: 40px;
-    display: inline-block;
-    position: relative;
-    background: #fff;
-    border-radius: 15% 15% 35% 35%;
-}
-
 @media screen and (max-width: 800px) {
     main {
       width: 90%;

@@ -1,6 +1,7 @@
 // filepath: /c:/Users/Mr. VT/Documents/app seguimiento/server/index.js
 import express from "express";
 import { fileURLToPath } from 'url';
+import { exec, execSync } from "child_process";
 import { dirname } from 'path';
 import process from "process";
 import path from 'path';
@@ -49,6 +50,35 @@ app.use('/public/css', express.static(path.join('public', 'css')));
 app.listen(app.get("port"), () => {
   console.log("Servidor iniciado______________________");
   console.log("Puerto: ", app.get("port"));
-  console.log("_______________________________________");
-  console.log("");
+  try {
+    // Obtener la IP pública sin mostrar la barra de progreso
+    const ip = execSync("curl -s ifconfig.me").toString().trim();
+    console.log("IP pública: ", ip);
+
+    // Iniciar Localtunnel una vez que el servidor esté corriendo
+    const localtunnel = exec(`lt --port ${app.get("port")}`, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Error al iniciar Localtunnel: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        console.error(`Error en stderr: ${stderr}`);
+        return;
+      }
+      console.log(`Localtunnel output: ${stdout}`);
+    });
+
+    // Capturar la salida de Localtunnel
+    localtunnel.stdout.on('data', (data) => {
+      const urlMatch = data.match(/https:\/\/[a-zA-Z0-9\-_]+\.loca\.lt/);
+      if (urlMatch) {
+        console.log(`Localtunnel URL: ${urlMatch[0]}`);
+        console.log("_______________LOG______________________");
+        console.log("");
+      }
+    });
+
+  } catch (error) {
+    console.error(`Error: ${error.message}`);
+  }
 });

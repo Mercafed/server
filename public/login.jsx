@@ -20,9 +20,6 @@ class Login extends React.Component {
                 <input type="text" name="usuario" placeholder="Usuario" required/>
                 <input type="password" name="contraseña" placeholder="Contraseña" required/>
                 <button type="submit">Iniciar Sesión</button>
-                <div class="loader-container">
-                  <span class="loader"></span>
-                </div>
               </form>
             </main>
           </body>
