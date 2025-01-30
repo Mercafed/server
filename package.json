@@ -1,0 +1,28 @@
+{
+  "name": "seguimiento",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "seguimiento de un modelo de dropshiping con aliexpress manual",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node server/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-engine": "^4.5.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.7",
+    "@babel/node": "^7.26.0",
+    "@babel/preset-env": "^7.26.7",
+    "@babel/preset-react": "^7.26.3"
+  }
+}

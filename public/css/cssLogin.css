@@ -1,0 +1,87 @@
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background-color: #18181B;
+}
+
+main{
+    width: 350px;
+    max-width: 450px;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	overflow: hidden;
+    border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+    padding-bottom: 50px;
+}
+
+header {
+    width: 100%;
+    background: #FFE;
+    padding: 30px 0px;
+    margin-bottom: 60px;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+}
+
+h1{
+    color:  #573b8a;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	font-weight: bold;
+}
+
+input{
+	width: 60%;
+	height: 10px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 12px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+
+button{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #573b8a;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 30px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+
+button:hover{
+	background: #6d44b8;
+}
+
+.loader {
+    width: 48px;
+    height: 40px;
+    display: inline-block;
+    position: relative;
+    background: #fff;
+    border-radius: 15% 15% 35% 35%;
+}
+
+@media screen and (max-width: 800px) {
+    main {
+      width: 90%;
+    }
+}
